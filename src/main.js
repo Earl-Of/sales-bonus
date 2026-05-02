@@ -6,6 +6,9 @@
  */
 function calculateSimpleRevenue(purchase, _product) {
   // @TODO: Расчет выручки от операции
+  const discount = 1 - purchase.discount / 100;
+  const revenue = purchase.sale_price * purchase.quantity * discount;
+  return revenue;
 }
 
 /**
@@ -15,6 +18,7 @@ function calculateSimpleRevenue(purchase, _product) {
  * @param seller карточка продавца
  * @returns {number}
  */
+
 function calculateBonusByProfit(index, total, seller) {
   // @TODO: Расчет бонуса от позиции в рейтинге
   const { profit } = seller;
